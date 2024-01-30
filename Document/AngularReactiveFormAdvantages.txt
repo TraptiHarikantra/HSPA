@@ -1,0 +1,9 @@
+Advanatges of angular Reactive Form
+
+1. Cleaner Template
+2. High Performance
+3. synchronous and predictable
+4. easier testing
+5. easier way to implement custom validation
+
+Inorder to group all the controls in one group in angular it rpovides ngModeGroup

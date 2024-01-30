@@ -1,0 +1,3 @@
+Never save user sensitive data in local storage
+
+formbuilder is a helper class provided by Angular used to build reactive form. formbuilder will create a new instance of formcontrol class.
