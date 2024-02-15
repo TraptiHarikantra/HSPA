@@ -21,12 +21,17 @@ import { UserLoginComponent } from './User/user-login/user-login.component';
 import { UserRegisterComponent } from './User/user-register/user-register.component';
 import { UserService } from 'src/Services/user.service';
 import { AlertifyService } from 'src/Services/alertify.service';
+import { PropertdetailresolverService } from './Property/propertdetailresolver.service';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { FilterPipe } from './pipes/filter.pipe';
+import { SortPipe } from './pipes/sort.pipe';
 
 const appRoutes: Routes = [
   { path :'', component: PropertyListComponent},
   { path : 'rent-property', component: PropertyListComponent},
   { path :'add-property', component: AddPropertyComponent},
-  { path: 'property-detail/:id', component: PropertyDetailComponent},
+  { path: 'property-detail/:id', component: PropertyDetailComponent, 
+               resolve: {prp: PropertdetailresolverService}},
   { path: 'user/login', component: UserLoginComponent},
   { path: 'user/register', component:UserRegisterComponent},
   { path: '**', component: PropertyListComponent}
@@ -41,7 +46,9 @@ const appRoutes: Routes = [
       AddPropertyComponent,
       PropertyDetailComponent,
       UserLoginComponent,
-      UserRegisterComponent
+      UserRegisterComponent,
+      FilterPipe,
+      SortPipe
    ],
   imports: [
     BrowserModule,
@@ -54,15 +61,16 @@ const appRoutes: Routes = [
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ButtonsModule,
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    NgxGalleryModule
     
   ],
   providers: [
     HousingService,
     UserService,
     AlertifyService,
-    UserService
-    
+    UserService,
+    PropertdetailresolverService
   ],
   bootstrap: [AppComponent]
 })

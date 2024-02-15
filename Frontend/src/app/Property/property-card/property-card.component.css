@@ -7,6 +7,15 @@
  min-height: 400px;
 }
 
+.card-body h1{
+  font-family: fantasy;
+  color: blue;
+}
+
+.font-italic {
+  font: italic;
+  color: red;
+}
 .card:hover img{
   transform: scale(1.2,1.2);
   transition-duration: 500ms;
@@ -45,3 +54,9 @@
 .animate{
   transition: all 0.3s ease-in-out;
 }
+
+.font-highlight {
+  font-style: italic;
+  color: red;
+}
+

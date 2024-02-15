@@ -1,6 +1,6 @@
     <div class = "card">
         <div class="card-img-wrapper">
-<img *ngIf="propertyName.Image" src="assets/Image/{{propertyName.Image}}.png">
+<img *ngIf="propertyName.Image" src="assets/Image/{{propertyName?.Image}}.png">
 <img *ngIf="!propertyName.Image" src="assets/Image/Home.png">
 <ul *ngIf="!hideIcon" class="list-inline text-center member-icons animate">
     <li class="list-inline-item">
@@ -21,7 +21,7 @@
     <span *ngIf="propertyName.FType != 'Unfurnished'">Furnished</span> | Ready to Move
 
     <hr class="mt-0 mb-2">
-    <h6><span>Price: {{propertyName.Price}} USD.</span> |
-    Area: <span>{{propertyName.BuiltArea}} sq ft</span></h6> 
+    <h6><span class="font-italic">Price: {{propertyName.Price}} USD.</span> |
+    Area: <span class="font-italic">{{propertyName.BuiltArea}} sq ft</span></h6> 
 </div>
 </div>
